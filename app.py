@@ -2,9 +2,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-st.set_page_config(page_title="Leiepris 2025", page_icon="🏡")
+st.set_page_config(page_title="Leiepris 2025")
 
-# Load artifacts
 ridge = joblib.load("ridge_model.pkl")
 feature_cols = joblib.load("feature_columns.pkl")
 area_growth = joblib.load("area_growth.pkl")
@@ -35,4 +34,4 @@ if st.button("Beregn leie"):
 
     st.subheader(kr(price_2025) + " / mnd")
 
-    st.caption(f"2024-estimat: {kr(base_2024)} × Vekst {g*100:.1f}% = 2025-estimat")
+    st.caption(f"2024-estimat: {kr(base_2024)} x Vekst {g*100:.1f}% = 2025-estimat")
